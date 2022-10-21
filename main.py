@@ -85,7 +85,9 @@ for i, data in core_df.iterrows():
 
         percentage = fuzz.ratio(cell_value, compared_value)
 
-        if percentage < 88:
+        if percentage < 94:
+            continue
+        elif compared_value[ 0 : len(compared_value)-1] != cell_value[ 0 : len(cell_value)-1]:
             continue
 
         output_df.loc[len(output_df.index)] = [
